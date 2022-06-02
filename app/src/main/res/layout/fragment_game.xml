@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.GameFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/lights"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/greylights1"
+                android:layout_width="54dp"
+                android:layout_height="233dp"
+                android:src="@drawable/grey_lights" />
+
+            <ImageView
+                android:id="@+id/greylights2"
+                android:layout_width="54dp"
+                android:layout_height="233dp"
+                android:layout_marginStart="16dp"
+                android:src="@drawable/grey_lights" />
+
+            <ImageView
+                android:id="@+id/greylights3"
+                android:layout_width="54dp"
+                android:layout_height="233dp"
+                android:layout_marginStart="16dp"
+                android:src="@drawable/grey_lights" />
+
+            <ImageView
+                android:id="@+id/greylights4"
+                android:layout_width="54dp"
+                android:layout_height="233dp"
+                android:layout_marginStart="16dp"
+                android:src="@drawable/grey_lights" />
+
+            <ImageView
+                android:id="@+id/greylights5"
+                android:layout_width="54dp"
+                android:layout_height="233dp"
+                android:layout_marginStart="16dp"
+                android:src="@drawable/grey_lights" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="vgnvhgvn"
+            android:textSize="36sp"
+            android:textStyle="normal|bold"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lights"
+            android:textColor="@color/timeColor"/>
+
+        <ImageView
+            android:id="@+id/start_button"
+            android:layout_width="125dp"
+            android:layout_height="149dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/time"
+            app:srcCompat="@drawable/start_button" />
+
+        <ImageView
+            android:id="@+id/stop_button"
+            android:layout_width="125dp"
+            android:layout_height="149dp"
+            android:layout_marginTop="20dp"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/time"
+            app:srcCompat="@drawable/stop_button" />
+
+        <ImageView
+            android:id="@+id/try_again_button"
+            android:layout_width="125dp"
+            android:layout_height="149dp"
+            android:layout_marginTop="20dp"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/time"
+            app:srcCompat="@drawable/try_again_button" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "182024146185",
+    "project_id": "seriesmini-3aa0e",
+    "storage_bucket": "seriesmini-3aa0e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:182024146185:android:ca59d1a15e03b4c97597d8",
+        "android_client_info": {
+          "package_name": "com.example.fadinglightsapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "182024146185-jv1eifun2851n3k5q74ensmimr8nn6kf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAAaRbYp53GQaeuMSmJxKh1pGSbeptLDrI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "182024146185-jv1eifun2851n3k5q74ensmimr8nn6kf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
