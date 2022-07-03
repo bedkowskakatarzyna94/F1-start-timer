@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -18,9 +19,9 @@
                 android:layout_height="70dp"
                 android:layout_marginTop="25dp"
                 android:gravity="center"
-                android:text="SIGN UP"
+                android:text="@string/sign_up_text"
                 android:textColor="#AEAAAA"
-                android:textSize="27dp" />
+                android:textSize="27sp" />
 
             <androidx.cardview.widget.CardView
 
@@ -42,7 +43,8 @@
                             android:id="@+id/email_registration"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="E-mail" />
+                            android:hint="@string/e_mail_to_sign_up"
+                            android:textColorHint="#BCAAA4" />
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.textfield.TextInputLayout
@@ -53,7 +55,7 @@
                             android:id="@+id/pass_registration"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="Password" />
+                            android:hint="@string/password_to_sign_up" />
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.textfield.TextInputLayout
@@ -64,7 +66,7 @@
                             android:id="@+id/repeat_pass_registration"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="Repeat password" />
+                            android:hint="@string/repeat_password_to_sign_up" />
 
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -76,7 +78,9 @@
                             android:id="@+id/nickname"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="Nickname" />
+                            android:hint="@string/nickname_to_sign_up"
+                            android:textColorHint="#BCAAA4"
+                            tools:ignore="TextContrastCheck" />
                     </com.google.android.material.textfield.TextInputLayout>
 
                 </LinearLayout>
@@ -91,7 +95,8 @@
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="17dp"
                 android:background="@color/buttoncolor"
-                android:text="SIGN UP" />
+                android:text="@string/sign_up"
+                tools:ignore="DuplicateSpeakableTextCheck" />
 
         </LinearLayout>
     </ScrollView>

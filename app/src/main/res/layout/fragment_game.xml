@@ -24,35 +24,40 @@
                 android:id="@+id/greylights1"
                 android:layout_width="54dp"
                 android:layout_height="233dp"
-                android:src="@drawable/grey_lights" />
+                android:src="@drawable/grey_lights"
+                android:contentDescription="@string/first_grey_lights" />
 
             <ImageView
                 android:id="@+id/greylights2"
                 android:layout_width="54dp"
                 android:layout_height="233dp"
                 android:layout_marginStart="16dp"
-                android:src="@drawable/grey_lights" />
+                android:src="@drawable/grey_lights"
+                android:contentDescription="@string/second_grey_lights" />
 
             <ImageView
                 android:id="@+id/greylights3"
                 android:layout_width="54dp"
                 android:layout_height="233dp"
                 android:layout_marginStart="16dp"
-                android:src="@drawable/grey_lights" />
+                android:src="@drawable/grey_lights"
+                android:contentDescription="@string/third_grey_lights" />
 
             <ImageView
                 android:id="@+id/greylights4"
                 android:layout_width="54dp"
                 android:layout_height="233dp"
                 android:layout_marginStart="16dp"
-                android:src="@drawable/grey_lights" />
+                android:src="@drawable/grey_lights"
+                android:contentDescription="@string/fourth_grey_lights" />
 
             <ImageView
                 android:id="@+id/greylights5"
                 android:layout_width="54dp"
                 android:layout_height="233dp"
                 android:layout_marginStart="16dp"
-                android:src="@drawable/grey_lights" />
+                android:src="@drawable/grey_lights"
+                android:contentDescription="@string/fifth_grey_lights" />
         </LinearLayout>
 
         <TextView
@@ -60,7 +65,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
-            android:text="vgnvhgvn"
+            android:text="@string/tryagain"
             android:textSize="36sp"
             android:textStyle="normal|bold"
             android:visibility="invisible"
@@ -77,7 +82,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/time"
-            app:srcCompat="@drawable/start_button" />
+            app:srcCompat="@drawable/start_button"
+            android:contentDescription="@string/start" />
 
         <ImageView
             android:id="@+id/stop_button"
@@ -88,7 +94,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/time"
-            app:srcCompat="@drawable/stop_button" />
+            app:srcCompat="@drawable/stop_button"
+            android:contentDescription="@string/stop" />
 
         <ImageView
             android:id="@+id/try_again_button"
@@ -99,7 +106,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/time"
-            app:srcCompat="@drawable/try_again_button" />
+            app:srcCompat="@drawable/try_again_button"
+            android:contentDescription="@string/try_again" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>
