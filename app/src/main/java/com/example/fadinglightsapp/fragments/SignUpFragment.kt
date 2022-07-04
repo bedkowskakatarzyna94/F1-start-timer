@@ -14,7 +14,6 @@ import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.fragment_sign_up.*
 
 class SignUpFragment : BaseFragment() {
-    private val REG_DEBUG = "REG_DEBUG"
     private val fbAuth = FirebaseAuth.getInstance()
     private val userVm: UserViewModel by viewModels<UserViewModel>()
 
@@ -23,7 +22,6 @@ class SignUpFragment : BaseFragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_sign_up, container, false)
     }
 
@@ -42,7 +40,7 @@ class SignUpFragment : BaseFragment() {
                 fbAuth.createUserWithEmailAndPassword(email, pass)
                     .addOnSuccessListener { authRes ->
                         userVm.saveUser(User(email, nick, null, authRes.user?.uid))
-                        if (authRes.user != null) startApp()
+                        authRes.user?.let { startApp() }
                     }
                     .addOnFailureListener { exc ->
                         Snackbar.make(
@@ -50,7 +48,7 @@ class SignUpFragment : BaseFragment() {
                             "Ups...Something went wrong...",
                             Snackbar.LENGTH_SHORT
                         ).show()
-                        Log.d(REG_DEBUG, exc.message.toString())
+                        Log.e("SIGN_UP_ERROR", exc.message.toString())
                     }
             }
         }

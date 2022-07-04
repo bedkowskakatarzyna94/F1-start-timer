@@ -9,7 +9,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
-    private val tabTitles = listOf("game", "rank")
+    private val tabTitles = listOf(R.string.game_tab_label, R.string.rank_tab_label)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
             lifecycle
         )
         TabLayoutMediator(tabLayout, viewPager) { tab, position ->
-            tab.text = tabTitles[position]
+            tab.text = getText(tabTitles[position])
             viewPager.setCurrentItem(tab.position, true)
         }.attach()
     }

@@ -9,7 +9,6 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
 class FirebaseRepository {
-    private val REPO_DEBUG = "REPO_DEBUG"
 
     private val auth = FirebaseAuth.getInstance()
     private val db = FirebaseFirestore.getInstance()
@@ -32,8 +31,8 @@ class FirebaseRepository {
         db.collection("users")
             .document(uid!!)
             .set(user)
-            .addOnSuccessListener { Log.d(TAG, "DocumentSnapshot successfully written!") }
-            .addOnFailureListener { e -> Log.w(TAG, "Error writing document", e) }
+            .addOnSuccessListener { Log.d("SAVE_USER", "DocumentSnapshot successfully written!") }
+            .addOnFailureListener { e -> Log.e("SAVE_USER", "Error writing document", e) }
     }
 
     fun updateTime(time: Double) {
@@ -48,9 +47,9 @@ class FirebaseRepository {
                 )
             }
         }.addOnSuccessListener {
-            Log.d(REPO_DEBUG, "Time successfully written!")
+            Log.d("UPDATE_TIME", "Time successfully written!")
         }.addOnFailureListener {
-            Log.d(REPO_DEBUG, it.message.toString())
+            Log.e("UPDATE_TIME", it.message.toString())
         }
     }
 }

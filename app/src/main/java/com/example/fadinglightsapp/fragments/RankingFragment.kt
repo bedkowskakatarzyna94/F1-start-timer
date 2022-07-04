@@ -15,9 +15,6 @@ import kotlinx.android.synthetic.main.fragment_ranking.*
 
 class RankingFragment : Fragment() {
 
-    // Firebase
-    private val PROFILE_DEBUG = "PROFILE_DEBUG"
-
     private val rankingVm: RankingViewModel by viewModels()
     private val adapter = RankingAdapter(listOf())
 

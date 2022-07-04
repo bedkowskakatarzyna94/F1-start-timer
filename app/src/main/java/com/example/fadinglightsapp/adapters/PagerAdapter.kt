@@ -14,11 +14,12 @@ class PagerAdapter(fm: FragmentManager, private val numberOfFrags: Int, lifecycl
     override fun createFragment(position: Int): Fragment {
         when (position) {
             GAME_FRAGMENT -> return GameFragment()
-            1 -> return RankingFragment()
+            RANKING_FRAGMENT -> return RankingFragment()
         }
         throw Exception("should not happened")
     }
     companion object {
         const val GAME_FRAGMENT = 0
+        const val RANKING_FRAGMENT = 1
     }
 }

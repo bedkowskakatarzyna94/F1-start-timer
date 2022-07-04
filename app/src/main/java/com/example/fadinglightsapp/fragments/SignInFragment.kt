@@ -14,7 +14,6 @@ import kotlinx.android.synthetic.main.fragment_sign_in.*
 class SignInFragment : BaseFragment() {
 
     private val fbAuth = FirebaseAuth.getInstance()
-    private val LOG_DEBUG = "LOG_DEBUG"
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -43,7 +42,7 @@ class SignInFragment : BaseFragment() {
 
             fbAuth.signInWithEmailAndPassword(email, pass)
                 .addOnSuccessListener {
-                    it.user.let { startApp() }
+                    it.user?.let { startApp() }
                 }
                 .addOnFailureListener {
                     Snackbar.make(
@@ -51,7 +50,7 @@ class SignInFragment : BaseFragment() {
                         "Ups...Something went wrong...",
                         Snackbar.LENGTH_SHORT
                     ).show()
-                    Log.d(LOG_DEBUG, it.message.toString())
+                    Log.e("SIGN_IN_ERROR", it.message.toString())
                 }
         }
     }

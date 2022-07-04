@@ -6,6 +6,7 @@ import android.os.Looper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -13,7 +14,7 @@ import com.example.fadinglightsapp.R
 import com.example.fadinglightsapp.viewmodels.GameViewModel
 import kotlinx.android.synthetic.main.fragment_game.*
 import java.util.*
-import kotlin.random.Random.Default.nextInt
+import kotlin.random.Random.Default.nextLong
 
 class GameFragment : Fragment() {
     private val gameVm: GameViewModel by viewModels()
@@ -28,81 +29,56 @@ class GameFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        var current: GregorianCalendar? = null
-        val handler = Handler(Looper.myLooper()!!)
+        setupListeners()
+    }
+
+    private fun setupListeners() {
+        val lights: List<ImageView> =
+            listOf(greylights1, greylights2, greylights3, greylights4, greylights5)
+
+        var startTime: GregorianCalendar? = null
+        val handler = Looper.myLooper()?.let { Handler(it) }
+
         start_button.setOnClickListener {
             start_button.visibility = View.INVISIBLE
             stop_button.visibility = View.VISIBLE
-            val delayed = nextInt(5500, 8000).toLong()
-            handler.postDelayed(
-                {
-                    greylights1.setImageResource(R.drawable.red_lights)
-                },
-                1000
-            )
-            handler.postDelayed(
-                {
-                    greylights2.setImageResource(R.drawable.red_lights)
-                },
-                2000
-            )
-            handler.postDelayed(
-                {
-                    greylights3.setImageResource(R.drawable.red_lights)
-                },
-                3000
-            )
-            handler.postDelayed(
-                {
-                    greylights4.setImageResource(R.drawable.red_lights)
-                },
-                4000
-            )
-            handler.postDelayed(
-                {
-                    greylights5.setImageResource(R.drawable.red_lights)
-                },
-                5000
-            )
-            handler.postDelayed(
-                {
-                    greylights1.setImageResource(R.drawable.grey_lights)
-                    greylights2.setImageResource(R.drawable.grey_lights)
-                    greylights3.setImageResource(R.drawable.grey_lights)
-                    greylights4.setImageResource(R.drawable.grey_lights)
-                    greylights5.setImageResource(R.drawable.grey_lights)
-                    current = GregorianCalendar()
-                },
-                delayed
-            )
+            lights.forEachIndexed { index, imageView ->
+                handler?.postDelayed(
+                    { imageView.setImageResource(R.drawable.red_lights) },
+                    (index + 1) * 1000L
+                )
+                handler?.postDelayed({
+                    lights.forEach { light ->
+                        light.setImageResource(R.drawable.grey_lights)
+                        startTime = GregorianCalendar()
+                    }
+                }, nextLong(5500, 8000))
+            }
         }
 
         stop_button.setOnClickListener {
-            val current2 = GregorianCalendar()
-            if (current == null) {
-                time.text = "FALSE START"
-                handler.removeCallbacksAndMessages(null)
+            handler?.removeCallbacksAndMessages(null)
+            val stopTime = GregorianCalendar()
+
+            if (startTime == null) {
+                time.text = getText(R.string.false_start_text)
             } else {
-                val result =
-                    ((((current2.timeInMillis - current!!.timeInMillis)).toDouble()) / 1000)
-                time.text = "%.3f".format(result)
-                gameVm.updateTime(result)
+                val resultTime =
+                    (stopTime.timeInMillis - startTime!!.timeInMillis).toDouble() / 1000
+                time.text = "%.3f".format(resultTime)
+                gameVm.updateTime(resultTime)
             }
-            current = null
+
             time.visibility = TextView.VISIBLE
-            stop_button.visibility = View.INVISIBLE
             try_again_button.visibility = View.VISIBLE
+            stop_button.visibility = View.INVISIBLE
         }
 
         try_again_button.setOnClickListener {
-            try_again_button.visibility = View.INVISIBLE
             time.visibility = TextView.INVISIBLE
+            try_again_button.visibility = View.INVISIBLE
             start_button.visibility = View.VISIBLE
-            greylights1.setImageResource(R.drawable.grey_lights)
-            greylights2.setImageResource(R.drawable.grey_lights)
-            greylights3.setImageResource(R.drawable.grey_lights)
-            greylights4.setImageResource(R.drawable.grey_lights)
-            greylights5.setImageResource(R.drawable.grey_lights)
+            lights.forEach { it.setImageResource(R.drawable.grey_lights) }
         }
     }
 }

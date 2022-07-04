@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">FadingLightsApp</string>
+    <string name="app_name">F1 start timer</string>
     <string name="first_grey_lights">first grey lights</string>
     <string name="second_grey_lights">second grey lights</string>
     <string name="third_grey_lights">third grey lights</string>
@@ -19,6 +19,9 @@
     <string name="nickname_to_sign_up">Nickname</string>
     <string name="sign_up">SIGN UP</string>
     <string name="e_mail_to_sign_up">E-mail</string>
-    <string name="user_name_for_ranking">TextView</string>
-    <string name="points_for_ranking">TextView</string>
+    <string name="user_name_for_ranking">user name</string>
+    <string name="points_for_ranking">points</string>
+    <string name="game_tab_label">game</string>
+    <string name="rank_tab_label">rank</string>
+    <string name="false_start_text">FALSE START</string>
 </resources>
