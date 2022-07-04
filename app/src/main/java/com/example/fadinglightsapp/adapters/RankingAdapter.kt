@@ -26,9 +26,6 @@ class RankingAdapter(var users: List<User>) : RecyclerView.Adapter<MyViewHolder>
         name.text = users[position].name
         points.text = users[position].time.toString()
     }
-
 }
 
-
 class MyViewHolder(val view: View) : RecyclerView.ViewHolder(view)
-

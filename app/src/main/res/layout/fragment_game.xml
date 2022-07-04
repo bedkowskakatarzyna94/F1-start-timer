@@ -65,7 +65,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
-            android:text="@string/tryagain"
+            android:text="@string/try_again"
             android:textSize="36sp"
             android:textStyle="normal|bold"
             android:visibility="invisible"

@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.example.fadinglightsapp.R
-//import com.example.fadinglightsapp.SignInFragmentDirections
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.fragment_sign_in.*
@@ -32,7 +31,7 @@ class SignInFragment : BaseFragment() {
     }
 
     private fun setupRegistrationClick() {
-        signUpButton.setOnClickListener{
+        signUpButton.setOnClickListener {
             findNavController().navigate(SignInFragmentDirections.actionSignInFragmentToSignUpFragment().actionId)
         }
     }
@@ -43,19 +42,17 @@ class SignInFragment : BaseFragment() {
             val pass = passLoginInput.text?.trim().toString()
 
             fbAuth.signInWithEmailAndPassword(email, pass)
-                .addOnSuccessListener { authRes ->
-                    if (authRes.user != null) startApp()
+                .addOnSuccessListener {
+                    it.user.let { startApp() }
                 }
-                .addOnFailureListener { exc ->
+                .addOnFailureListener {
                     Snackbar.make(
                         requireView(),
                         "Ups...Something went wrong...",
                         Snackbar.LENGTH_SHORT
                     ).show()
-                    Log.d(LOG_DEBUG, exc.message.toString())
+                    Log.d(LOG_DEBUG, it.message.toString())
                 }
-
         }
     }
 }
-

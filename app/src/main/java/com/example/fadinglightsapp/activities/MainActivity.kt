@@ -2,8 +2,8 @@ package com.example.fadinglightsapp.activities
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.fadinglightsapp.adapters.PagerAdapter
 import com.example.fadinglightsapp.R
+import com.example.fadinglightsapp.adapters.PagerAdapter
 import com.google.android.material.tabs.TabLayoutMediator
 import kotlinx.android.synthetic.main.activity_main.*
 

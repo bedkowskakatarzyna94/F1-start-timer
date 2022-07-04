@@ -9,17 +9,18 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import com.example.fadinglightsapp.viewmodels.GameViewModel
 import com.example.fadinglightsapp.R
+import com.example.fadinglightsapp.viewmodels.GameViewModel
 import kotlinx.android.synthetic.main.fragment_game.*
 import java.util.*
 import kotlin.random.Random.Default.nextInt
 
 class GameFragment : Fragment() {
-    private val gameVm: GameViewModel by viewModels<GameViewModel>()
+    private val gameVm: GameViewModel by viewModels()
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         return inflater.inflate(R.layout.fragment_game, container, false)
@@ -91,7 +92,6 @@ class GameFragment : Fragment() {
             time.visibility = TextView.VISIBLE
             stop_button.visibility = View.INVISIBLE
             try_again_button.visibility = View.VISIBLE
-
         }
 
         try_again_button.setOnClickListener {
@@ -104,6 +104,5 @@ class GameFragment : Fragment() {
             greylights4.setImageResource(R.drawable.grey_lights)
             greylights5.setImageResource(R.drawable.grey_lights)
         }
-
     }
 }

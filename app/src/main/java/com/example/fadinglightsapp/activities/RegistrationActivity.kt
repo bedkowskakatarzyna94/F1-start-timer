@@ -1,8 +1,8 @@
 package com.example.fadinglightsapp.activities
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.example.fadinglightsapp.R
 import com.google.firebase.auth.FirebaseAuth
 
@@ -20,15 +20,13 @@ class RegistrationActivity : AppCompatActivity() {
         isCurrentUser()
     }
 
-    private fun isCurrentUser(){
-        fbAuth.currentUser?.let{auth ->
-            val intent = Intent(applicationContext, MainActivity::class.java).apply{
-                flags=(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
-            }
-            startActivity(intent)
+    private fun isCurrentUser() {
+        fbAuth.currentUser?.let {
+            startActivity(
+                Intent(applicationContext, MainActivity::class.java).apply {
+                    flags = (Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
+                }
+            )
         }
     }
-
-
-
 }

@@ -3,14 +3,18 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.184375" />
-        <entry key="app/src/main/res/layout/activity_registration.xml" value="0.1526268115942029" />
-        <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.1526268115942029" />
-        <entry key="app/src/main/res/layout/fragment_game.xml" value="0.184375" />
-        <entry key="app/src/main/res/layout/fragment_ranking.xml" value="0.35989583333333336" />
-        <entry key="app/src/main/res/layout/fragment_sign_in.xml" value="0.1526268115942029" />
-        <entry key="app/src/main/res/layout/fragment_sign_up.xml" value="0.35989583333333336" />
-        <entry key="app/src/main/res/layout/ranking_row.xml" value="0.35989583333333336" />
+        <entry key="app/src/main/res/drawable/start_button.xml" value="0.184" />
+        <entry key="app/src/main/res/drawable/stop_button.xml" value="0.184" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.14814814814814814" />
+        <entry key="app/src/main/res/layout/activity_registration.xml" value="0.14814814814814814" />
+        <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.14814814814814814" />
+        <entry key="app/src/main/res/layout/fragment_game.xml" value="0.14814814814814814" />
+        <entry key="app/src/main/res/layout/fragment_ranking.xml" value="0.14814814814814814" />
+        <entry key="app/src/main/res/layout/fragment_sign_in.xml" value="0.321875" />
+        <entry key="app/src/main/res/layout/fragment_sign_up.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/ranking_row.xml" value="0.14814814814814814" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.184" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.184" />
       </map>
     </option>
   </component>
