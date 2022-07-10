@@ -24,4 +24,5 @@
     <string name="game_tab_label">game</string>
     <string name="rank_tab_label">rank</string>
     <string name="false_start_text">FALSE START</string>
+    <string name="request_permission">Request permission</string>
 </resources>
